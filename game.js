@@ -40,7 +40,7 @@ function pickRand(poleyArray) {
 function changePoley() {
     audio();
     pickRand(poleys);
-    poleyPerson = "poleys/" + poleyMon + ".png";
+    poleyPerson = poleyMon + ".png";
     let poleyImg = document.querySelector("#poleyimg");
     poleyImg.setAttribute("src", poleyPerson);
     if (poleyPerson.includes("Poley")) {
