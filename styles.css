@@ -2,3 +2,9 @@ img {
     width: 6rem;
     height: 6rem;
 }
+
+body {
+    text-align: center;
+    background-color: #2C3333;
+    color: #CBE4DE;
+}
