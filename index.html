@@ -28,7 +28,9 @@
     <button id="changePoley" onclick="changePoley(); startNotDisabled()">Collect Poley!</button>
     <h3 id="poleygot">You just got:</h3>
     <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
-        aria-controls="offcanvasWithBothOptions">Show poleys</button>
+        aria-controls="offcanvasWithBothOptions">show poleys</button>
+    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#shinyPoleys"
+        aria-controls="shinyPoleys">Show shinys</button>
 
     <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
         aria-labelledby="offcanvasWithBothOptionsLabel">
@@ -38,28 +40,65 @@
         </div>
         <div class="offcanvas-body">
             <div id="poleyCounter">
-                <img src="poleys/poley.png" alt="">
-                <h5 id="poleyCounter">Poley</h5>
+                <img src="poleys/poleySill.png" alt="">
+                <h5>Poley</h5>
             </div>
             <div id="bugPoleyCounter">
-                <img src="poleys/bug Poley.png" alt="">
-                <h5 id="bugPoleyCounter">Bug Poley</h5>
+                <img src="poleys/bugPoleySill.png" alt="">
+                <h5>Bug Poley</h5>
             </div>
             <div id="calculatorPoleyCounter">
-                <img src="poleys/calculator Poley.png" alt="">
-                <h5 id="calculatorPoleyCounter">Calculator Poley</h5>
+                <img src="poleys/calculatorPoleySill.png" alt="">
+                <h5>Calculator Poley</h5>
             </div>
             <div id="deskPoleyCounter">
-                <img src="poleys/desk Poley.png" alt="">
-                <h5 id="deskPoleyCounter">Desk Poley</h5>
+                <img src="poleys/deskPoleySill.png" alt="">
+                <h5>Desk Poley</h5>
             </div>
             <div id="magicPoleyCounter">
-                <img src="poleys/magic Poley.png" alt="">
-                <h5 id="magicPoleyCounter">Magic Poley</h5>
+                <img src="poleys/magicPoleySill.png" alt="">
+                <h5>Magic Poley</h5>
             </div>
             <div id="poleCounter">
-                <img src="poleys/pole.png" alt="">
-                <h5 id="poleCounter">Pole</h5>
+                <img src="poleys/poleSill.png" alt="">
+                <h5>Pole</h5>
+            </div>
+            <div id="bobCounter">
+                <img src="poleys/bobSill.png" alt="">
+                <h5>Bob</h5>
+            </div>
+        </div>
+    </div>
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="shinyPoleys"
+        aria-labelledby="shinyPoleysLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Shiny Poley Backpack</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div id="shinyPoleyCounter">
+                <img src="poleys/poleySill.png" alt="">
+                <h5>Shiny Poley</h5>
+            </div>
+            <div id="shinyBugPoleyCounter">
+                <img src="poleys/bugPoleySill.png" alt="">
+                <h5>Shiny Bug Poley</h5>
+            </div>
+            <div id="shinyCalculatorPoleyCounter">
+                <img src="poleys/calculatorPoleySill.png" alt="">
+                <h5>Shiny Calculator Poley</h5>
+            </div>
+            <div id="shinyDeskPoleyCounter">
+                <img src="poleys/deskPoleySill.png" alt="">
+                <h5>Shiny Desk Poley</h5>
+            </div>
+            <div id="shinyMagicPoleyCounter">
+                <img src="poleys/magicPoleySill.png" alt="">
+                <h5>Shiny Magic Poley</h5>
+            </div>
+            <div id="shinyPoleCounter">
+                <img src="poleys/poleSill.png" alt="">
+                <h5>Shiny Pole</h5>
             </div>
         </div>
     </div>
