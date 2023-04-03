@@ -14,16 +14,16 @@ class Poley {
 let poley = new Poley("poley", 60);
 let poleyCounter = 0;
 
-let desk_poley = new Poley("desk poley", 10);
+let desk_poley = new Poley("desk Poley", 10);
 let deskPoleyCounter = 0;
 
-let calculator_poley = new Poley("calculator poley", 6);
+let calculator_poley = new Poley("calculator Poley", 6);
 let calculatorPoleyCounter = 0;
 
-let magic_poley = new Poley("magic poley", 0.1);
+let magic_poley = new Poley("magic Poley", 0.1);
 let magicPoleyCounter = 0;
 
-let bug_poley = new Poley("bug poley", 1);
+let bug_poley = new Poley("bug Poley", 1);
 let bugPoleyCounter = 0;
 
 let pole = new Poley("pole", 14.9);
