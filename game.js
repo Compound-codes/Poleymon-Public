@@ -1,8 +1,9 @@
-let notYetPoleys = [ "mrPoley", "jacketPoley", "gumPoley", 
-"toastPoley", "poleys", "poleytrio", "poleyduo", "poleyard", "lorePoley", 
-"boliePoley"]
+let notYetPoleys = ["jacketPoley", "gumPoley",
+    "toastPoley", "poleys", "poleytrio", "poleyduo", "poleyard", "lorePoley"
+]
 let muted = false;
-
+let poleyEncounters = 0;
+let boost = false;
 // Poleys
 class Poley {
     constructor(name, rarity) {
@@ -10,8 +11,7 @@ class Poley {
         this.rarity = rarity;
     }
 }
-
-let poley = new Poley("poley", 59.4);
+let poley = new Poley("poley", 39.4);
 let shiny_poley = new Poley("shiny poley", 0.6);
 let poleyCounter = 0;
 let shinyPoleyCounter = 0;
@@ -41,10 +41,21 @@ let shiny_pole = new Poley("shiny pole", 0.1);
 let poleCounter = 0;
 let shinyPoleCounter = 0;
 
+let mr_poley = new Poley("mr poley", 19.8);
+let shiny_mr_poley = new Poley("shiny mr poley", 0.2);
+let mrPoleyCounter = 0;
+let shinyMrPoleyCounter = 0;
+
+let bolie_poley = new Poley("bolie poley", 4.95);
+let shiny_bolie_poley = new Poley("shiny bolie poley", 0.05);
+let boliePoleyCounter = 0;
+let shinyBoliePoleyCounter = 0;
+
 let bob = new Poley("bob", 12.9);
 let bobCounter = 0;
 
-let poleys = [poley, desk_poley, calculator_poley, magic_poley, bug_poley, pole, shiny_pole, shiny_calculator_poley, shiny_desk_poley, shiny_magic_poley, shiny_poley, shiny_bug_poley, bob]
+let poleys = [poley, desk_poley, calculator_poley, magic_poley, bug_poley, pole, shiny_pole, shiny_calculator_poley, shiny_desk_poley, 
+    shiny_magic_poley, shiny_poley, shiny_bug_poley, mr_poley, shiny_mr_poley, bob, bolie_poley, shiny_bolie_poley];
 
 const music = new Audio("AsianSong.mp3");
 const throwSoundEffect = new Audio("throw.mp3");
@@ -61,16 +72,21 @@ function throwSound() {
     throwSoundEffect.play();
 }
 
+function calculateWorth(poleyName) {
+    let worth = Math.round(100 / poleyName.rarity);
+    console.log("worth: " + worth);
+}
+
 function mute() {
-    if (!muted){
+    if (!muted) {
         music.volume = 0;
-        throwSoundEffect.volume=0.2;
+        throwSoundEffect.volume = 0.2;
     } else {
-        if (music.volume != 1){
+        if (music.volume != 1) {
             music.volume += 0.5;
             throwSoundEffect.volume += 0.5;
         }
-        
+
     }
     muted = !muted;
 }
@@ -81,7 +97,7 @@ function volume() {
 }
 
 function pickPoley(poleyArray) {
-    let poleyArrayRarity = poleyArray.map(function(obj){
+    let poleyArrayRarity = poleyArray.map(function (obj) {
         return obj.rarity;
     })
     const totalPercentage = poleyArrayRarity.reduce((acc, val) => acc + val, 0);
@@ -97,100 +113,108 @@ function pickPoley(poleyArray) {
     }
     console.log(selectedObject);
     let poleyMon = selectedObject.name;
-    switch (poleyMon){
+    switch (poleyMon) {
         case "poley":
-            poleyCounter +=1;
-            changePoleyCounter("poleyCounter", "poley", poleyCounter);
-            console.log("poleys: " + poleyCounter)
+            poleyCounter += 1;
+            changePoleyCounter("poleyCounter", "poley");
             break;
         case "desk poley":
-            deskPoleyCounter +=1;
-            changePoleyCounter("deskPoleyCounter", "desk poley", deskPoleyCounter);
-            console.log("poleys: "+deskPoleyCounter)
+            deskPoleyCounter += 1;
+            changePoleyCounter("deskPoleyCounter", "desk poley");
             break;
         case "calculator poley":
-            calculatorPoleyCounter +=1;
-            changePoleyCounter("calculatorPoleyCounter", "calculator poley", calculatorPoleyCounter);
-            console.log("poleys: ")
+            calculatorPoleyCounter += 1;
+            changePoleyCounter("calculatorPoleyCounter", "calculator poley");
             break;
         case "magic poley":
-            magicPoleyCounter +=1;
-            changePoleyCounter("magicPoleyCounter", "magic poley", magicPoleyCounter);
-            console.log("poleys: ")
+            magicPoleyCounter += 1;
+            changePoleyCounter("magicPoleyCounter", "magic poley");
             break;
         case "bug poley":
-            bugPoleyCounter +=1;
-            changePoleyCounter("bugPoleyCounter", "bug poley", bugPoleyCounter);
-            console.log("poleys: ")
+            bugPoleyCounter += 1;
+            changePoleyCounter("bugPoleyCounter", "bug poley");
             break;
         case "pole":
-            poleCounter +=1;
-            changePoleyCounter("poleCounter", "pole", poleCounter);
-            console.log("poleys: ")
+            poleCounter += 1;
+            changePoleyCounter("poleCounter", "pole");
+            break;
+        case "mr poley":
+            mrPoleyCounter +=1;
+            changePoleyCounter("mrPoleyCounter", "mr poley");
+            break;
+        case "bolie poley":
+            boliePoleyCounter +=1;
+            changePoleyCounter("boliePoleyCounter", "bolie poley");
             break;
         case "shiny poley":
-            shinyPoleyCounter +=1;
-            changePoleyCounter("shinyPoleyCounter", "shiny poley", shinyPoleyCounter)
-            console.log("poleys: ")
+            shinyPoleyCounter += 1;
+            changePoleyCounter("shinyPoleyCounter", "shiny poley");
             shinyPoleyEffect.play();
             break;
         case "shiny desk poley":
-            shinyDeskPoleyCounter +=1;
-            changePoleyCounter("shinyDeskPoleyCounter", "shiny desk poley", shinyDeskPoleyCounter)
-            console.log("poleys: ")
+            shinyDeskPoleyCounter += 1;
+            changePoleyCounter("shinyDeskPoleyCounter", "shiny desk poley");
             shinyPoleyEffect.play();
             break;
         case "shiny calculator poley":
-            shinyCalculatorPoleyCounter +=1;
-            changePoleyCounter("shinyCalculatorPoleyCounter", "shiny calculator poley", shinyCalculatorPoleyCounter);
-            console.log("poleys: ")
+            shinyCalculatorPoleyCounter += 1;
+            changePoleyCounter("shinyCalculatorPoleyCounter", "shiny calculator poley");
             shinyPoleyEffect.play();
             break;
         case "shiny magic poley":
-            shinyMagicPoleyCounter +=1;
-            changePoleyCounter("shinyMagicPoleyCounter", "shiny magic poley", shinyMagicPoleyCounter);
-            console.log("poleys: ")
+            shinyMagicPoleyCounter += 1;
+            changePoleyCounter("shinyMagicPoleyCounter", "shiny magic poley");
             shinyPoleyEffect.play();
             break;
         case "shiny bug poley":
-            shinyBugPoleyCounter +=1;
-            changePoleyCounter("shinyBugPoleyCounter", "shiny bug poley", shinyBugPoleyCounter);
-            console.log("poleys: ")
+            shinyBugPoleyCounter += 1;
+            changePoleyCounter("shinyBugPoleyCounter", "shiny bug poley");
             shinyPoleyEffect.play();
             break;
         case "shiny pole":
-            shinyPoleCounter +=1;
-            changePoleyCounter("shinyPoleCounter", "shiny pole", shinyPoleCounter);
-            console.log("poleys: ")
+            shinyPoleCounter += 1;
+            changePoleyCounter("shinyPoleCounter", "shiny pole");
             shinyPoleyEffect.play();
+            break;
+        case "shiny mr poley":
+            shinyMrPoleyCounter +=1;
+            changePoleyCounter("shinyMrPoleyCounter", "shiny mr poley");
+            shinyPoleyEffect.play();
+            break;
+        case "shiny bolie poley":
+            shinyBoliePoleyCounter +=1;
+            changePoleyCounter("shinyBoliePoleyCounter", "shiny bolie poley");
             break;
         case "bob":
             bobCounter += 1;
-            changePoleyCounter("bobCounter", "bob", bobCounter);
+            changePoleyCounter("bobCounter", "bob");
             break;
         default:
             console.log("error! ln 126, somethin rong :(");
-            
+
     }
-    return poleyMon;
+    poleyEncounters +=1;
+    console.log(poleyEncounters + ": broly is cool because he gave me this many poleys")
+    return selectedObject;
 }
 
-function changePoleyCounter(poleyCounterName, poleyName, value){
-    $("#" + poleyCounterName).html("<img src='poleys/" + poleyName + ".png'><h5 id='"+ poleyCounterName+"'>"+value+"</h5>")
+function changePoleyCounter(poleyCounterName, poleyName) {
+    $("#" + poleyCounterName).html("<img src='poleys/" + poleyName + ".png'><h5 id='" + poleyCounterName + "'>" + eval(poleyCounterName) + "</h5>")
 }
 
-function notDisabled(){
+function notDisabled() {
     let changedPoley = $("#changePoley");
     changedPoley.prop('disabled', false);
-    console.log("not disabled!")
 }
 
 function changePoley() {
     audio();
     throwSound();
-    let poleyMon = pickPoley(poleys);
+    let poleyMonObject = pickPoley(poleys);
+    let poleyMon = poleyMonObject.name;
     let poleyPerson = "poleys/" + poleyMon + ".png";
     let poleyImg = document.querySelector("#poleyimg");
+    calculateWorth(poleyMonObject);
     poleyImg.setAttribute("src", poleyPerson);
     if (poleyPerson.includes("Poley")) {
         let poleyMon0 = poleyMon.split("");
@@ -205,11 +229,12 @@ function changePoley() {
     }
     let changedPoley = $("#changePoley");
     changedPoley.prop('disabled', true);
-    console.log("disabled!");
 }
 
-function startNotDisabled(){
-    setTimeout(() => {
-        notDisabled();
-    }, 5000);
+function startNotDisabled() {
+    if (boost) {
+        setTimeout(notDisabled, 1000);
+    } else {
+        setTimeout(notDisabled, 2000);
+    }
 }
