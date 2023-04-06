@@ -167,19 +167,19 @@ function pickPoley(poleyArray) {
             break;
         case "shiny desk poley":
             shinyDeskPoleyCounter += 1;
-            cPc("shinyDeskPoleyCounter", "shiny desk poley");
+            cPc("shinyDeskPoleyCounter", "shiny desk Poley");
             break;
         case "shiny calculator poley":
             shinyCalculatorPoleyCounter += 1;
-            cPc("shinyCalculatorPoleyCounter", "shiny calculator poley");
+            cPc("shinyCalculatorPoleyCounter", "shiny calculator Poley");
             break;
         case "shiny magic poley":
             shinyMagicPoleyCounter += 1;
-            cPc("shinyMagicPoleyCounter", "shiny magic poley");
+            cPc("shinyMagicPoleyCounter", "shiny Magic Poley");
             break;
         case "shiny bug poley":
             shinyBugPoleyCounter += 1;
-            cPc("shinyBugPoleyCounter", "shiny bug poley");
+            cPc("shinyBugPoleyCounter", "shiny bug Poley");
             break;
         case "shiny pole":
             shinyPoleCounter += 1;
