@@ -1,4 +1,4 @@
-let notYetPoleys = ["jacketPoley", "gumPoley",
+let notYetPoleys = ["gumPoley",
     "toastPoley", "poleys", "poleytrio", "poleyduo", "poleyard", "lorePoley"
 ]
 let muted = false;
@@ -13,7 +13,7 @@ class Poley {
         this.rarity = rarity;
     }
 }
-let poley = new Poley("poley", 39.4);
+let poley = new Poley("poley", 35.4);
 let shiny_poley = new Poley("shiny poley", 0.6);
 let poleyCounter = 0;
 let shinyPoleyCounter = 0;
@@ -43,7 +43,7 @@ let shiny_pole = new Poley("shiny pole", 0.1);
 let poleCounter = 0;
 let shinyPoleCounter = 0;
 
-let mr_poley = new Poley("mr poley", 19.8);
+let mr_poley = new Poley("mr poley", 15.8);
 let shiny_mr_poley = new Poley("shiny mr poley", 0.2);
 let mrPoleyCounter = 0;
 let shinyMrPoleyCounter = 0;
@@ -53,13 +53,21 @@ let shiny_bolie_poley = new Poley("shiny bolie poley", 0.05);
 let boliePoleyCounter = 0;
 let shinyBoliePoleyCounter = 0;
 
-let bob = new Poley("bob", 12.9);
-let bobCounter = 0;
+let gum_poley = new Poley("gum poley", 7.92);
+let shiny_gum_poley = new Poley("shiny gum poley", 0.08);
+let gumPoleyCounter = 0;
+let shinyGumPoleyCounter = 0;
 
-let completedPoleyThingy = poleyCounter.toLocaleString("en-US") + shinyPoleyCounter.toLocaleString("en-US") + deskPoleyCounter.toLocaleString("en-US") + shinyDeskPoleyCounter.toLocaleString("en-US") + calculatorPoleyCounter.toLocaleString("en-US") + shinyCalculatorPoleyCounter.toLocaleString("en-US") + magicPoleyCounter.toLocaleString("en-US") + shinyMagicPoleyCounter.toLocaleString("en-US") + bugPoleyCounter.toLocaleString("en-US") + shinyBugPoleyCounter.toLocaleString("en-US") + poleCounter.toLocaleString("en-US") + shinyPoleCounter.toLocaleString("en-US") + mrPoleyCounter.toLocaleString("en-US") + shinyMrPoleyCounter.toLocaleString("en-US") + boliePoleyCounter.toLocaleString("en-US") + shinyBoliePoleyCounter.toLocaleString("en-US") + bobCounter.toLocaleString("en-US");
+let bob = new Poley("bob", 12.89);
+let shiny_bob = new Poley("bob", 0.01);
+let bobCounter = 0;
+let shinyBobCounter = 0;
+
+// let completedPoleyThingy = poleyCounter.toLocaleString("en-US") + shinyPoleyCounter.toLocaleString("en-US") + deskPoleyCounter.toLocaleString("en-US") + shinyDeskPoleyCounter.toLocaleString("en-US") + calculatorPoleyCounter.toLocaleString("en-US") + shinyCalculatorPoleyCounter.toLocaleString("en-US") + magicPoleyCounter.toLocaleString("en-US") + shinyMagicPoleyCounter.toLocaleString("en-US") + bugPoleyCounter.toLocaleString("en-US") + shinyBugPoleyCounter.toLocaleString("en-US") + poleCounter.toLocaleString("en-US") + shinyPoleCounter.toLocaleString("en-US") + mrPoleyCounter.toLocaleString("en-US") + shinyMrPoleyCounter.toLocaleString("en-US") + boliePoleyCounter.toLocaleString("en-US") + shinyBoliePoleyCounter.toLocaleString("en-US") + bobCounter.toLocaleString("en-US");
 
 let poleys = [poley, desk_poley, calculator_poley, magic_poley, bug_poley, pole, shiny_pole, shiny_calculator_poley, shiny_desk_poley,
-    shiny_magic_poley, shiny_poley, shiny_bug_poley, mr_poley, shiny_mr_poley, bob, bolie_poley, shiny_bolie_poley
+    shiny_magic_poley, shiny_poley, shiny_bug_poley, mr_poley, shiny_mr_poley, bob, bolie_poley, shiny_bolie_poley, gum_poley, 
+    shiny_gum_poley, shiny_bob
 ];
 // music
 const music = new Audio("AsianSong.mp3");
@@ -149,6 +157,10 @@ function pickPoley(poleyArray) {
             boliePoleyCounter += 1;
             cPc("boliePoleyCounter", "bolie poley");
             break;
+        case "gum poley":
+            gumPoleyCounter +=1;
+            cPc("gumPoleyCounter", "gum poley");
+            break;
         case "shiny poley":
             shinyPoleyCounter += 1;
             cPc("shinyPoleyCounter", "shiny poley");
@@ -181,10 +193,17 @@ function pickPoley(poleyArray) {
             shinyBoliePoleyCounter += 1;
             cPc("shinyBoliePoleyCounter", "shiny bolie poley");
             break;
+        case "shiny gum poley":
+            shinyGumPoleyCounter += 1;
+            cPc("shinyGumPoleyCounter", "shiny gum poley");
+            break;
         case "bob":
             bobCounter += 1;
             cPc("bobCounter", "bob");
             break;
+        case "shiny bob":
+            shinyBobCounter += 1;
+            cPc("shinyBobCounter", "shiny bob");
         default:
             console.log("error! ln 126, somethin rong :(");
 
