@@ -58,8 +58,9 @@ let bobCounter = 0;
 
 let completedPoleyThingy = poleyCounter.toLocaleString("en-US") + shinyPoleyCounter.toLocaleString("en-US") + deskPoleyCounter.toLocaleString("en-US") + shinyDeskPoleyCounter.toLocaleString("en-US") + calculatorPoleyCounter.toLocaleString("en-US") + shinyCalculatorPoleyCounter.toLocaleString("en-US") + magicPoleyCounter.toLocaleString("en-US") + shinyMagicPoleyCounter.toLocaleString("en-US") + bugPoleyCounter.toLocaleString("en-US") + shinyBugPoleyCounter.toLocaleString("en-US") + poleCounter.toLocaleString("en-US") + shinyPoleCounter.toLocaleString("en-US") + mrPoleyCounter.toLocaleString("en-US") + shinyMrPoleyCounter.toLocaleString("en-US") + boliePoleyCounter.toLocaleString("en-US") + shinyBoliePoleyCounter.toLocaleString("en-US") + bobCounter.toLocaleString("en-US");
 
-let poleys = [poley, desk_poley, calculator_poley, magic_poley, bug_poley, pole, shiny_pole, shiny_calculator_poley, shiny_desk_poley, 
-    shiny_magic_poley, shiny_poley, shiny_bug_poley, mr_poley, shiny_mr_poley, bob, bolie_poley, shiny_bolie_poley];
+let poleys = [poley, desk_poley, calculator_poley, magic_poley, bug_poley, pole, shiny_pole, shiny_calculator_poley, shiny_desk_poley,
+    shiny_magic_poley, shiny_poley, shiny_bug_poley, mr_poley, shiny_mr_poley, bob, bolie_poley, shiny_bolie_poley
+];
 // music
 const music = new Audio("AsianSong.mp3");
 const throwSoundEffect = new Audio("throw.mp3");
@@ -113,72 +114,88 @@ function pickPoley(poleyArray) {
         }
     }
     // console.log(selectedObject);
+
     let poleyMon = selectedObject.name;
     switch (poleyMon) {
         case "poley":
+            poleyCounter += 1;
             cPc("poleyCounter", "poley");
             break;
         case "desk poley":
+            deskPoleyCounter += 1;
             cPc("deskPoleyCounter", "desk poley");
             break;
         case "calculator poley":
+            calculatorPoleyCounter += 1;
             cPc("calculatorPoleyCounter", "calculator poley");
             break;
         case "magic poley":
+            magicPoleyCounter += 1;
             cPc("magicPoleyCounter", "magic poley");
             break;
         case "bug poley":
+            bugPoleyCounter += 1;
             cPc("bugPoleyCounter", "bug poley");
             break;
         case "pole":
+            poleCounter += 1;
             cPc("poleCounter", "pole");
             break;
         case "mr poley":
+            mrPoleyCounter += 1;
             cPc("mrPoleyCounter", "mr poley");
             break;
         case "bolie poley":
+            boliePoleyCounter += 1;
             cPc("boliePoleyCounter", "bolie poley");
             break;
         case "shiny poley":
+            shinyPoleyCounter += 1;
             cPc("shinyPoleyCounter", "shiny poley");
             break;
         case "shiny desk poley":
+            shinyDeskPoleyCounter += 1;
             cPc("shinyDeskPoleyCounter", "shiny desk poley");
             break;
         case "shiny calculator poley":
+            shinyCalculatorPoleyCounter += 1;
             cPc("shinyCalculatorPoleyCounter", "shiny calculator poley");
             break;
         case "shiny magic poley":
+            shinyMagicPoleyCounter += 1;
             cPc("shinyMagicPoleyCounter", "shiny magic poley");
             break;
         case "shiny bug poley":
+            shinyBugPoleyCounter += 1;
             cPc("shinyBugPoleyCounter", "shiny bug poley");
             break;
         case "shiny pole":
+            shinyPoleCounter += 1;
             cPc("shinyPoleCounter", "shiny pole");
             break;
         case "shiny mr poley":
+            shinyMrPoleyCounter += 1;
             cPc("shinyMrPoleyCounter", "shiny mr poley");
             break;
         case "shiny bolie poley":
+            shinyBoliePoleyCounter += 1;
             cPc("shinyBoliePoleyCounter", "shiny bolie poley");
             break;
         case "bob":
+            bobCounter += 1;
             cPc("bobCounter", "bob");
             break;
         default:
             console.log("error! ln 126, somethin rong :(");
 
     }
-    poleyEncounters +=1;
+    poleyEncounters += 1;
     console.log(poleyEncounters + ": broly is cool because he gave me this many poleys")
     return selectedObject;
 }
 
 function cPc(poleyCounterName, poleyName) {
-    let counter = eval(poleyCounterName);
-    counter +=1;
-    if (poleyName.includes("shiny ")){
+    if (poleyName.includes("shiny ")) {
         shinyPoleyEffect.play();
     }
     document.querySelector("#" + poleyCounterName).innerHTML = "<img src='poleys/" + poleyName + ".png'><h5 id='" + poleyCounterName + "'>" + eval(poleyCounterName) + "</h5>"
