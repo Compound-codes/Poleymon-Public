@@ -220,7 +220,7 @@ function cPc(poleyCounterName, poleyName) {
     document.querySelector("#" + poleyCounterName).innerHTML = "<img src='poleys/" + poleyName + ".png'><h5 id='" + poleyCounterName + "'>" + eval(poleyCounterName) + "</h5>"
 }
 
-function changePoley() {
+function cP() {
     audio();
     throwSound();
     let poleyMonObject = pickPoley(poleys);
